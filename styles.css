@@ -1,0 +1,35 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black; 
+    display: flex;
+    justify-content: center;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+}
+
+.griddiv {
+    box-sizing: border-box; 
+    background-color: white; 
+    width: 5vh; 
+    height: 5vh;
+}
+
+
+.griddiv:hover {
+    background-color: black; 
+}
+
+
+.row {
+    display: flex; 
+    gap: 5px; 
+    border: 5px solid black;
+}
