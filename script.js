@@ -15,3 +15,11 @@ for (let i=0; i<16; i++) {
 
 }
 
+
+
+
+main.addEventListener('click', function handleClick(event) {
+    if (event.target.className == 'griddiv'){event.target.style.backgroundColor = 'red';}
+    
+
+});

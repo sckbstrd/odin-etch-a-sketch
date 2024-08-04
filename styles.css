@@ -8,6 +8,7 @@ body {
     background-color: black; 
     display: flex;
     justify-content: center;
+    flex-direction: row;
 }
 
 .main {
@@ -33,3 +34,10 @@ body {
     gap: 5px; 
     border: 5px solid black;
 }
+
+/*
+.row:hover .griddiv{
+    border: 10px dashed blue;
+}
+    */
+
