@@ -16,6 +16,10 @@ function startup() {
     colorPicker.select();
 }
 
+
+let elementExists = document.getElementsByClassName('griddiv')[0];
+
+if (elementExists == undefined){
 for (let i=0; i<16; i++) {
     const oneRow = document.createElement('div')
     oneRow.setAttribute('class', 'row');
@@ -25,8 +29,7 @@ for (let i=0; i<16; i++) {
         oneRow.appendChild(griddiv);
     }
     main.appendChild(oneRow);
-
-
+	}
 }
 
 
