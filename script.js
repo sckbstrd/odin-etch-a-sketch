@@ -44,19 +44,12 @@ for (let i=0; i<16; i++) {
 }
 
 
-
-function getColor(event) {
-    return colorPicker.value;
-}
-  
-
 main.addEventListener('click', function handleClick(event) {
     if (event.target.className == 'griddiv'){
-        event.target.style.backgroundColor=getColor(event);
-        root.style.setProperty('--colorpick', getColor(event));
+        event.target.style.backgroundColor=colorPicker.value;
+        root.style.setProperty('--colorpick', colorPicker.value);
         let colorpick= rootStyles.getPropertyValue('--colorpick');
         console.log(colorpick);
-
     }
 });
 
