@@ -16,9 +16,7 @@ window.addEventListener("load", startup);
 function startup() {
     colorPicker.value = defaultColor;
     root.style.setProperty('--colorpick', defaultColor);
-    let colorpick= rootStyles.getPropertyValue('--colorpick');
-    console.log(colorpick); 
-    colorPicker.addEventListener("change", getColor, false);
+    colorPicker.addEventListener("change");
     colorPicker.select();
 }
 
@@ -46,8 +44,8 @@ for (let i=0; i<16; i++) {
  
 main.addEventListener('click', function handleClick(event) {
     if (event.target.className == 'griddiv'){
-        event.target.style.backgroundColor=colorPicker.value;
         root.style.setProperty('--colorpick', colorPicker.value);
+        event.target.style.backgroundColor=colorPicker.value;
     }
 });
 
