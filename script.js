@@ -7,14 +7,25 @@ const colorPicker = document.getElementById('colorpicker');
 // https://webflow.com/blog/best-color-combinations
 
 let defaultColor = '#735DA5';
+let root = document.querySelector(':root');
+let rootStyles = getComputedStyle(root);
+
 
 window.addEventListener("load", startup);
 
 function startup() {
     colorPicker.value = defaultColor;
+    root.style.setProperty('--colorpick', defaultColor);
+    let colorpick= rootStyles.getPropertyValue('--colorpick');
+    console.log(colorpick); 
     colorPicker.addEventListener("change", getColor, false);
     colorPicker.select();
 }
+
+
+
+
+
 
 
 let elementExists = document.getElementsByClassName('griddiv')[0];
@@ -40,7 +51,13 @@ function getColor(event) {
   
 
 main.addEventListener('click', function handleClick(event) {
-    if (event.target.className == 'griddiv'){event.target.style.backgroundColor=getColor(event);}
+    if (event.target.className == 'griddiv'){
+        event.target.style.backgroundColor=getColor(event);
+        root.style.setProperty('--colorpick', getColor(event));
+        let colorpick= rootStyles.getPropertyValue('--colorpick');
+        console.log(colorpick);
+
+    }
 });
 
 main.addEventListener('contextmenu', function handleClick(event) {
