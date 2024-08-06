@@ -11,7 +11,7 @@ let root = document.querySelector(':root');
 let rootStyles = getComputedStyle(root);
 
 colorPicker.value = defaultColor;
-
+root.style.setProperty('--colorpick', colorPicker.value)
 
 function changeColor() {root.style.setProperty('--colorpick', colorPicker.value);}
 
