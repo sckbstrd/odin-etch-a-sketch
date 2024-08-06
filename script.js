@@ -1,12 +1,14 @@
 const main = document.getElementById('main');
 const colorPicker = document.getElementById('colorpicker');
 const checkBox = document.getElementById('checkbox');
+const checkBox2 = document.getElementById('checkbox2');
 const label = document.querySelector('label');
 
 
 // Deep periwinkle and soft lilac
 // Hex codes: #735DA5, #D3C5E5
 // https://webflow.com/blog/best-color-combinations
+
 
 let defaultColor = '#735DA5';
 let root = document.querySelector(':root');
@@ -47,7 +49,7 @@ for (let i=0; i<16; i++) {
 	}
 }
 
- 
+
 main.addEventListener('click', function handleClick(event) {
     if (event.target.className == 'griddiv' && checkBox.checked) {
         colorPicker.value = getRandomColor();
@@ -55,10 +57,36 @@ main.addEventListener('click', function handleClick(event) {
     }
     root.style.setProperty('--colorpick', colorPicker.value);
     event.target.style.backgroundColor=colorPicker.value;
-    
-
-
 });
+
+
+
+function handleClick(event) {
+    if (event.target.className == 'griddiv' && checkBox.checked) {
+        colorPicker.value = getRandomColor();
+        label.style.backgroundColor = colorPicker.value;
+    }
+    root.style.setProperty('--colorpick', colorPicker.value);
+    event.target.style.backgroundColor = colorPicker.value;
+}
+
+function changeMode() {
+    if (checkBox2.checked){
+        console.log(checkBox2.checked + 'Made it hover!')
+        main.removeEventListener('click',  handleClick);
+        
+        main.addEventListener('mouseout', handleClick);   
+    } else {
+        console.log(checkBox2.checked)
+        main.removeEventListener('mouseout',  handleClick);
+        
+        main.addEventListener('click', handleClick);    
+    }
+}
+
+checkBox2.addEventListener('change', changeMode);
+
+
 
 main.addEventListener('contextmenu', function handleClick(event) {
     event.preventDefault();

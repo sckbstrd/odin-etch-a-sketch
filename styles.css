@@ -62,7 +62,22 @@ label {
     background-color: grey;
 }
 
+label:hover {
+    color: grey;
+    background-color: white;
+    cursor: pointer;
+}
+
+
 #checkbox {
+    width:30px;
+    height:30px;
+    background:white;
+    border-radius:5px;
+    border:2px solid #555;
+}
+
+#checkbox2 {
     width:30px;
     height:30px;
     background:white;
