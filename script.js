@@ -50,15 +50,8 @@ for (let i=0; i<16; i++) {
 }
 
 
-main.addEventListener('click', function handleClick(event) {
-    if (event.target.className == 'griddiv' && checkBox.checked) {
-        colorPicker.value = getRandomColor();
-        label.style.backgroundColor=colorPicker.value;
-    }
-    root.style.setProperty('--colorpick', colorPicker.value);
-    event.target.style.backgroundColor=colorPicker.value;
-});
-
+main.addEventListener('click', handleClick);
+main.addEventListener('contextmenu', handleRightClick);
 
 
 function handleClick(event) {
@@ -70,16 +63,17 @@ function handleClick(event) {
     event.target.style.backgroundColor = colorPicker.value;
 }
 
+function handleRightClick(event) {
+    event.preventDefault();
+    if (event.target.className == 'griddiv'){event.target.style.backgroundColor = 'white';}
+}
+
 function changeMode() {
     if (checkBox2.checked){
-        console.log(checkBox2.checked + 'Made it hover!')
         main.removeEventListener('click',  handleClick);
-        
-        main.addEventListener('mouseout', handleClick);   
+        main.addEventListener('mouseout', handleClick);    
     } else {
-        console.log(checkBox2.checked)
         main.removeEventListener('mouseout',  handleClick);
-        
         main.addEventListener('click', handleClick);    
     }
 }
@@ -88,7 +82,3 @@ checkBox2.addEventListener('change', changeMode);
 
 
 
-main.addEventListener('contextmenu', function handleClick(event) {
-    event.preventDefault();
-    if (event.target.className == 'griddiv'){event.target.style.backgroundColor = 'white';}
-});
