@@ -46,6 +46,7 @@ info {
 .top {
     display: flex;
     align-items: center;
+    
 }
 
 
@@ -54,4 +55,23 @@ info {
     height: 7vh;
     background: none;
     cursor: pointer;
+}
+
+label {
+    color: white;
+    background-color: var(--colorpick);
+}
+
+#checkbox {
+    width:30px;
+    height:30px;
+    background:white;
+    border-radius:5px;
+    border:2px solid #555;
+}
+
+.bottom {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }

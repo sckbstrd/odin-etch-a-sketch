@@ -1,5 +1,6 @@
 const main = document.getElementById('main');
 const colorPicker = document.getElementById('colorpicker');
+const checkBox = document.getElementById('checkbox');
 
 
 // Deep periwinkle and soft lilac
@@ -16,6 +17,19 @@ root.style.setProperty('--colorpick', colorPicker.value)
 function changeColor() {root.style.setProperty('--colorpick', colorPicker.value);}
 
 colorPicker.addEventListener('change', changeColor);
+
+function getRandomColor() {
+    const red = Math.floor(Math.random() * 256);
+    const green = Math.floor(Math.random() * 256);
+    const blue = Math.floor(Math.random() * 256);
+  
+    const hexRed = red.toString(16).padStart(2, '0');
+    const hexGreen = green.toString(16).padStart(2, '0');
+    const hexBlue = blue.toString(16).padStart(2, '0');
+  
+    const rgb = `#${hexRed}${hexGreen}${hexBlue}`;
+    return rgb;
+}
 
 let elementExists = document.getElementsByClassName('griddiv')[0];
 
@@ -34,9 +48,13 @@ for (let i=0; i<16; i++) {
 
  
 main.addEventListener('click', function handleClick(event) {
-    if (event.target.className == 'griddiv'){
-        event.target.style.backgroundColor=colorPicker.value;
+    if (event.target.className == 'griddiv' && checkBox.checked) {
+        colorPicker.value = getRandomColor();
     }
+    root.style.setProperty('--colorpick', colorPicker.value);
+    event.target.style.backgroundColor=colorPicker.value;
+
+
 });
 
 main.addEventListener('contextmenu', function handleClick(event) {
