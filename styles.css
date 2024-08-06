@@ -90,3 +90,9 @@ label:hover {
     align-items: center;
     gap: 15px;
 }
+
+.bottom-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
