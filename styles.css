@@ -16,11 +16,6 @@ body {
     gap: 15px;
 }
 
-#main {
-    display: flex;
-    flex-direction: column;
-}
-
 .griddiv {
     box-sizing: border-box; 
     background-color: white; 
