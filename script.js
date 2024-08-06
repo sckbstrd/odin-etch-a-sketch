@@ -10,18 +10,7 @@ let defaultColor = '#735DA5';
 let root = document.querySelector(':root');
 let rootStyles = getComputedStyle(root);
 
-
-window.addEventListener("load", startup);
-
-function startup() {
-    colorPicker.value = defaultColor;
-    root.style.setProperty('--colorpick', defaultColor);
-    colorPicker.addEventListener("change");
-    colorPicker.select();
-}
-
-
-
+colorPicker.value = defaultColor;
 
 
 
