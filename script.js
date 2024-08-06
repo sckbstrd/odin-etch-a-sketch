@@ -1,6 +1,7 @@
 const main = document.getElementById('main');
 const colorPicker = document.getElementById('colorpicker');
 const checkBox = document.getElementById('checkbox');
+const label = document.querySelector('label');
 
 
 // Deep periwinkle and soft lilac
@@ -50,9 +51,11 @@ for (let i=0; i<16; i++) {
 main.addEventListener('click', function handleClick(event) {
     if (event.target.className == 'griddiv' && checkBox.checked) {
         colorPicker.value = getRandomColor();
+        label.style.backgroundColor=colorPicker.value;
     }
     root.style.setProperty('--colorpick', colorPicker.value);
     event.target.style.backgroundColor=colorPicker.value;
+    
 
 
 });

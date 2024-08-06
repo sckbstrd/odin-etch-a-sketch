@@ -59,7 +59,7 @@ info {
 
 label {
     color: white;
-    background-color: var(--colorpick);
+    background-color: grey;
 }
 
 #checkbox {
