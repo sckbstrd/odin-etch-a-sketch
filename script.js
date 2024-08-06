@@ -13,7 +13,9 @@ let rootStyles = getComputedStyle(root);
 colorPicker.value = defaultColor;
 
 
+function changeColor() {root.style.setProperty('--colorpick', colorPicker.value);}
 
+colorPicker.addEventListener('change', changeColor);
 
 let elementExists = document.getElementsByClassName('griddiv')[0];
 
@@ -33,7 +35,6 @@ for (let i=0; i<16; i++) {
  
 main.addEventListener('click', function handleClick(event) {
     if (event.target.className == 'griddiv'){
-        root.style.setProperty('--colorpick', colorPicker.value);
         event.target.style.backgroundColor=colorPicker.value;
     }
 });
