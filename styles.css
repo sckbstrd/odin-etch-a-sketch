@@ -18,9 +18,10 @@ body {
 
 .griddiv {
     box-sizing: border-box; 
-    background-color: white; 
+    background-color: white;
     width: 5vh; 
     height: 5vh;
+    outline: 0.25vh solid gainsboro;
 }
 
 
@@ -31,8 +32,6 @@ body {
 
 
 .row {
-    display: flex; 
-    gap: 2px; 
-    border: 2px solid black;
+    display: flex;  
 }
 
