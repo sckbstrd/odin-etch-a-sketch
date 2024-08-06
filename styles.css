@@ -29,3 +29,17 @@ body {
     display: flex;  
 }
 
+
+info {
+    color: #735DA5;
+    background-color: #D3C5E5;
+    border-radius: 2px;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+
+.top {
+    display: flex;
+    align-items: center;
+}
