@@ -2,6 +2,7 @@
 
 :root {
     --colorpick: '';
+    --outlineValue: '';
 }
 
 body {
@@ -19,7 +20,7 @@ body {
     background-color: white;
     width: 5vh; 
     height: 5vh;
-    outline: 0.25vh solid gainsboro;
+    outline: var(--outlineValue);
 }
 
 
@@ -69,20 +70,12 @@ label:hover {
 }
 
 
-#checkbox {
-    width:30px;
-    height:30px;
-    background:white;
-    border-radius:5px;
-    border:2px solid #555;
-}
-
-#checkbox2 {
-    width:30px;
-    height:30px;
-    background:white;
-    border-radius:5px;
-    border:2px solid #555;
+#checkbox, #checkbox2, #checkbox3 {
+    width: 30px;
+    height: 30px;
+    background: white;
+    border-radius: 5px;
+    border: 2px solid #555;
 }
 
 .bottom {

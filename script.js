@@ -2,20 +2,21 @@ const main = document.getElementById('main');
 const colorPicker = document.getElementById('colorpicker');
 const checkBox = document.getElementById('checkbox');
 const checkBox2 = document.getElementById('checkbox2');
+const checkBox3 = document.getElementById('checkbox3');
+
+checkBox2.checked = true;
 const label = document.querySelector('label');
 
 
 // Deep periwinkle and soft lilac
 // Hex codes: #735DA5, #D3C5E5
 // https://webflow.com/blog/best-color-combinations
-
-
+ 
 let defaultColor = '#735DA5';
 let root = document.querySelector(':root');
-let rootStyles = getComputedStyle(root);
-
 colorPicker.value = defaultColor;
 root.style.setProperty('--colorpick', colorPicker.value)
+root.style.setProperty('--outlineValue', '0.25vh solid gainsboro')  
 
 function changeColor() {root.style.setProperty('--colorpick', colorPicker.value);}
 
@@ -50,7 +51,7 @@ for (let i=0; i<16; i++) {
 }
 
 
-main.addEventListener('click', handleClick);
+main.addEventListener('mouseout', handleClick);
 main.addEventListener('contextmenu', handleRightClick);
 
 
@@ -78,7 +79,14 @@ function changeMode() {
     }
 }
 
+
+function removeBorders() {
+    if (checkBox3.checked) {
+        root.style.setProperty('--outlineValue', 'none');
+    } else {
+        root.style.setProperty('--outlineValue', '0.25vh solid gainsboro')  
+    }
+}
+
 checkBox2.addEventListener('change', changeMode);
-
-
-
+checkBox3.addEventListener('change', removeBorders);
